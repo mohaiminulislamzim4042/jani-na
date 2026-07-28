@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Profile Word Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0d1117;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      color: #f0f6fc;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .word-card {
+      position: relative;
+      background: rgba(22, 27, 34, 0.8);
+      border: 1px solid rgba(240, 246, 252, 0.1);
+      border-radius: 12px;
+      padding: 1.8rem 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #c9d1d9;
+      cursor: default;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    /* Glow Effect on Hover */
+    .word-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(58, 134, 255, 0.15) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Hover States */
+    .word-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: #3a86ff;
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(58, 134, 255, 0.3),
+                  0 0 15px rgba(58, 134, 255, 0.2);
+    }
+
+    .word-card:hover::before {
+      opacity: 1;
+    }
+
+    .word-card span {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="grid-container">
+      <div class="word-card"><span>Confirm</span></div>
+      <div class="word-card"><span>Horse</span></div>
+      <div class="word-card"><span>Very</span></div>
+      <div class="word-card"><span>Exercise</span></div>
+      <div class="word-card"><span>Loud</span></div>
+      <div class="word-card"><span>Popular</span></div>
+      <div class="word-card"><span>Rocket</span></div>
+      <div class="word-card"><span>Farm</span></div>
+      <div class="word-card"><span>Palm</span></div>
+      <div class="word-card"><span>Law</span></div>
+      <div class="word-card"><span>Gas</span></div>
+      <div class="word-card"><span>Argue</span></div>
+    </div>
+  </div>
+
+</body>
+</html>
